@@ -1,0 +1,29 @@
+:root {
+    --background: #fffbff;
+    --primary-container: #006398;
+    --button-border-radius: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--background);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.2);
+    border: none;
+    padding: 10px;
+}
+
+.center {
+    display: flex;
+    flex-basis: 66%;
+}
+
+form * {
+    margin: 5px 0;
+}
+
+
+
+
+
+
