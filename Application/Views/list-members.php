@@ -1,7 +1,7 @@
 <main class="container">
     <div class="jumbotron">
-        <h1>Search Members by School</h1>
-        <form method="post" action="/api/member" id="searchForm">
+        <h1 class="h3 mb-3 mt-3 font-weight-normal">Search Members by School</h1>
+        <form method="get" action="/api/member" id="searchForm">
             <div class="form-group">
                 <label for="schoolSelect">Select School:</label>
                 <select class="form-control" id="schoolSelect" name="school_id" required>
