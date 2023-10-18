@@ -14,7 +14,7 @@ class Member extends BaseModel
 
     public function getMembersBySchoolId($schoolId) {
         $stmt = $this->conn->prepare(
-            "SELECT members.* FROM members 
+            "SELECT * FROM members 
          JOIN members_schools ON members.id = members_schools.member_id 
          WHERE members_schools.school_id = :school_id"
         );
