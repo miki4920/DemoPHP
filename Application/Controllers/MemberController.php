@@ -56,17 +56,17 @@ class MemberController extends Controller
 
     public function showAddMember() {
         $schoolData = $this->schoolModel->findAll();
-        $this->view('add-member', ["schools" => $schoolData]);
+        $this->view('add-member', script: "add", data: ["schools" => $schoolData]);
     }
 
     public function listMembers()
     {
         $schoolData = $this->schoolModel->findAll();
-        $this->view('list-members', ["schools" => $schoolData]);
+        $this->view('list-members', script: "list-members", data: ["schools" => $schoolData]);
     }
 
-    public function getMembersBySchool($schoolId) {
-        $membersList = $this->model->getMembersBySchoolId($schoolId);
+    public function getMembersBySchool($queryParams) {
+        $membersList = $this->model->getMembersBySchoolId($queryParams["school_id"]);
         $this->sendJsonResponse(200, ['status' => 'success', 'data' => ['members' => $membersList]]);
     }
 

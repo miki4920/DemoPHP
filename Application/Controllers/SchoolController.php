@@ -37,7 +37,7 @@ class SchoolController extends Controller
 
     public function showAddSchool()
     {
-        $this->view('add-school');
+        $this->view('add-school', script: "add");
     }
 
     public function postSchool()
