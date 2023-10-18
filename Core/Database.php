@@ -2,6 +2,7 @@
 
 namespace Demo\Core;
 
+use Exception;
 use PDO;
 use PDOException;
 
@@ -20,6 +21,20 @@ class Database {
 
     private function loadConfiguration() {
         $config = require('../secret.php');
+
+        if (!isset($config['host']) || empty($config['host'])) {
+            throw new Exception('Required configuration "host" is missing or empty.');
+        }
+        if (!isset($config['db_name']) || empty($config['db_name'])) {
+            throw new Exception('Required configuration "db_name" is missing or empty.');
+        }
+        if (!isset($config['username']) || empty($config['username'])) {
+            throw new Exception('Required configuration "username" is missing or empty.');
+        }
+        if (!isset($config['password'])) {
+            throw new Exception('Required configuration "password" is missing.');
+        }
+
         $this->host = $config['host'];
         $this->db_name = $config['db_name'];
         $this->username = $config['username'];
