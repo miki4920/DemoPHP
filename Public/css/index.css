@@ -4,6 +4,12 @@
     --button-border-radius: 40px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -13,9 +19,27 @@ nav {
     padding: 10px;
 }
 
-.center {
+footer {
     display: flex;
-    flex-basis: 66%;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+@media (min-width: 768px) {
+    .center {
+        display: flex;
+        flex-basis: 66%;
+    }
+}
+
+@media (max-width: 768px){
+    .center {
+        display: flex;
+    }
+}
+
+.container {
+    flex: 1;
 }
 
 form * {
